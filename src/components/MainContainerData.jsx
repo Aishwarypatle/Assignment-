@@ -169,7 +169,7 @@ const MainContainerData = ({
                     <FormCard>
                       <CustomerInfoWrapper>
                         <CustomerInfoContainer>
-                          <SectionTitle>Customer information</SectionTitle>
+                          {/* <SectionTitle>Customer information</SectionTitle> */}
                           <ExistingCustomerSection>
                             <SectionSubtitle>Existing customer</SectionSubtitle>
                             <ExistingCustomerContent>
@@ -1297,7 +1297,8 @@ const StepsCard = styled.div`
         align-items: center;
         aspect-ratio: 1;
         width: 100%;
-        padding: 30px;
+        padding: 2px;
+        margin: -11px
 
         @media (max-width: 991px) {
           margin - top: 30px;
@@ -1660,7 +1661,7 @@ const UploadButton = styled.div`
   justify-content: center;
   margin-top: 11px;
   padding: 10px;
-  width: 100%;
+  /* width: 100%; */
   @media (max-width: 991px) {
     padding: 0 20px;
   }
@@ -1686,7 +1687,7 @@ const VerifyButton = styled.div`
   margin-top: 13px;
   padding: 9px 60px;
   white-space: nowrap;
-  width: 100%;
+  /* width: 100%; */
   cursor: pointer;
   @media (max-width: 991px) {
     padding: 0 20px;
@@ -1808,7 +1809,7 @@ const UploadDocument = styled.div`
   justify-content: space-between;
   margin-top: 10px;
   padding: 11px 15px;
-  width: 100%;
+  /* width: 100%; */
 `;
 const DocumentSection = styled.section`
         display: flex;
@@ -1920,7 +1921,7 @@ const FormCard = styled.div`
         flex-grow: 1;
         flex-direction: column;
         width: 100%;
-        padding: 33px 39px 53px;
+        padding: 33px 12px 53px;
 
         @media (max-width: 991px) {
           max - width: 100%;
