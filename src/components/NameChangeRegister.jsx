@@ -9,7 +9,7 @@ import { Dashboard, ExpandLess, ExpandMore } from "@mui/icons-material";
 // import ConfirmationModal from "../../../common/ConfirmationModal";
 // import { APIbackend } from "../../../../APIbackendurl";
 
-import { setDefaultOptions } from "date-fns";
+// import { setDefaultOptions } from "date-fns";
 // import { FileUploadContext } from "../../../contexts/FileUploadContext";
 // import {
 //   cityNames,
@@ -22,6 +22,7 @@ import MainContainerData from "./MainContainerData";
 import Breadcrumb from "./Breadcrumb";
 
 const Container = styled("div")(({ theme }) => ({
+  width : '70vw',
   margin: "20px",
   [theme.breakpoints.down("sm")]: { margin: "16px" },
   "& .breadcrumb": {
@@ -41,10 +42,10 @@ const NameChangeRegister = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const { APIbackendURl, dispatchAPIbackendUrl } = useContext(APIbackend);
   // // const { basePointUrls } = APIbackendURl;
-  // const baseURL4 = basePointUrls[3004];
-  // const baseURL6 = basePointUrls[3006];
-  // const baseURL7 = basePointUrls[3007];
-  const [userData, setUserData] = useState({});
+  const baseURL4 = null;
+  const baseURL6 = null;
+  const baseURL7 = null;
+  const [userData, setUserData] = useState({name: "Nilesh Shaha"});
   // const { uploadedFiles, saveFile, uploadedFileURLs, saveFileURL, removeFile } =
   //   useContext(FileUploadContext);
   const [city, setCity] = useState(localStorage.getItem("selectedCity") || "");
