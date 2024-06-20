@@ -3,13 +3,16 @@ import Sidebar from "./Sidebar";
 import MainContainerData from "./MainContainerData";
 import NameChangeRegister from "./NameChangeRegister";
 import Header from "./Header";
+import { Card } from "@mui/material";
 
 const Home = () => {
   return (
     <>
       <Header />
-      <Sidebar />
-      <NameChangeRegister />
+      <Card sx={{display : "flex"}}>
+        <Sidebar />
+        <NameChangeRegister />
+      </Card>
     </>
   );
 };

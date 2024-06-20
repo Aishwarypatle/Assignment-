@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, IconButton } from "@mui/material";
+import { Input, IconButton, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ViewLoad from "./ViewLoad";
 import styled from "styled-components";
@@ -43,7 +43,7 @@ const MainContainerData = ({
               {/* <Header> */}
               <HeaderContent>
                 <PageTitle>
-                  <PageTitleText>Name change</PageTitleText>
+                  <PageTitleText>Application</PageTitleText>
                   <ServiceNumber>
                     <ServiceNumberBg>
                       <ServiceNumberIcon
@@ -57,14 +57,15 @@ const MainContainerData = ({
                           zIndex: 1,
                           fontSize: "14px",
                         }}>
-                        Service no - {userData.serviceNo}
+                        {/* Service no - {userData.serviceNo} */}
+                        Service no - 33456
                       </span>
                     </ServiceNumberBg>
                   </ServiceNumber>
                 </PageTitle>
                 <Actions>
                   <ActionButton>Book video call appointment</ActionButton>
-
+{/* 
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>
                     <ActionButton
                       type="button"
@@ -115,9 +116,9 @@ const MainContainerData = ({
                         <DocumentList />
                       </div>
                     </div>
-                  </div>
-                  {/* <ActionButton>View load</ActionButton>
-                      <ActionButton>Document list</ActionButton> */}
+                  </div> */}
+                  <ActionButton>View load</ActionButton>
+                  <ActionButton>Document list</ActionButton>
                 </Actions>
               </HeaderContent>
               <FormSection>
@@ -138,12 +139,26 @@ const MainContainerData = ({
                           loading="lazy"
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/3905fe385a3a43dc558a6a56adceb229e9eb70618bc9f010103b4501ab07349c?apiKey=183f48cf3544413d95323f9ce6e9aa6a&"
                         />
-                        <StepItem>
+
+                      <StepItem>
                           <StepCircle>
                             <StepCircleInner />
                           </StepCircle>
                           <StepContent>
                             <StepNumber>Step 2</StepNumber>
+                            <StepTitle>Verification</StepTitle>
+                          </StepContent>
+                        </StepItem>
+                        <StepConnector
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/3905fe385a3a43dc558a6a56adceb229e9eb70618bc9f010103b4501ab07349c?apiKey=183f48cf3544413d95323f9ce6e9aa6a&"
+                        />
+                        <StepItem>
+                          <StepCircle>
+                            <StepCircleInner />
+                          </StepCircle>
+                          <StepContent>
+                            <StepNumber>Step 3</StepNumber>
                             <StepTitle>Confirm details</StepTitle>
                           </StepContent>
                         </StepItem>
@@ -1184,21 +1199,24 @@ const ActionButton = styled.button`
   justify-content: center;
   padding: 11px 25px;
   cursor: pointer;
+  height :100%;
+  color : rgba(249, 157, 28, 1);
+  font-size: 4px,
 
   @media (max-width: 991px) {
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
 `;
 const Actions = styled.div`
         display: flex;
         gap: 20px;
-        font-size: 16px;
+        /* font-size: 16px; */
         color: #f99d1c;
         font-weight: 600;
         text-align: center;
 
         @media (max-width: 991px) {
-          flex - wrap: wrap;
+          flex-wrap: wrap;
 }
         `;
 

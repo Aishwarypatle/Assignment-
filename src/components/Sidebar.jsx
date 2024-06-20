@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 
 const SidebarContainer = styled.div`
-  width: 250px;
+  max-width: 30vw;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -151,6 +151,7 @@ const Sidebar = () => {
         <Text>Site map</Text>
       </MenuItem>
     </SidebarContainer>
+
   );
 };
 
