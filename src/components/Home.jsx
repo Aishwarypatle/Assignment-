@@ -1,7 +1,15 @@
 import React from "react";
+import Sidebar from "./Sidebar";
+import MainContainerData from "./MainContainerData";
+import NameChangeRegister from "./NameChangeRegister";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Sidebar />
+      <NameChangeRegister />
+    </>
+  );
 };
 
 export default Home;
