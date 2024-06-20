@@ -31,8 +31,6 @@ const Logo = styled.div`
 `;
 
 const LogoImage = styled.img`
-  width: 40px;
-  height: 40px;
   margin-right: 10px;
 `;
 
@@ -66,14 +64,9 @@ const Sidebar = () => {
     <SidebarContainer>
       <Logo>
         <LogoImage
-          src="https://www.torrentpower.com/images/logo-torrent-power.png"
+          src="https://www.torrentpower.com/images/logo.png"
           alt="Torrent Power Logo"
         />
-        <LogoText>
-          torrent
-          <br />
-          power
-        </LogoText>
       </Logo>
       <MenuItem>
         <Icon>🏠</Icon>
