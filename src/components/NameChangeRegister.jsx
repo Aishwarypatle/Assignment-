@@ -1,24 +1,25 @@
 // NameChangeRegister.js File
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import PaymentFAQs from "app/views/pages/PayNow/PaymentFAQs";
-import PaymentProcedure from "app/views/pages/PayNow/PaymentProcedure";
+// import PaymentFAQs from "app/views/pages/PayNow/PaymentFAQs";
+// import PaymentProcedure from "app/views/pages/PayNow/PaymentProcedure";
 import styled, { ThemeProvider } from "styled-components";
-import DocumentList from "../DocumentList";
+// import DocumentList from "../DocumentList";
 import { Dashboard, ExpandLess, ExpandMore } from "@mui/icons-material";
-import ConfirmationModal from "../../../common/ConfirmationModal";
-import { APIbackend } from "../../../../APIbackendurl";
+// import ConfirmationModal from "../../../common/ConfirmationModal";
+// import { APIbackend } from "../../../../APIbackendurl";
 
 import { setDefaultOptions } from "date-fns";
-import { FileUploadContext } from "../../../contexts/FileUploadContext";
+// import { FileUploadContext } from "../../../contexts/FileUploadContext";
 // import {
 //   cityNames,
 //   cityLanguageMap,
 //   languageNames,
 // } from "../../../citiesConfig";
 import { useNavigate } from "react-router-dom";
-import { Breadcrumb } from "app/components";
+// import { Breadcrumb } from "app/components";
 import MainContainerData from "./MainContainerData";
+import Breadcrumb from "./Breadcrumb";
 
 const Container = styled("div")(({ theme }) => ({
   margin: "20px",
@@ -38,14 +39,14 @@ const theme = {
 const NameChangeRegister = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { APIbackendURl, dispatchAPIbackendUrl } = useContext(APIbackend);
-  const { basePointUrls } = APIbackendURl;
-  const baseURL4 = basePointUrls[3004];
-  const baseURL6 = basePointUrls[3006];
-  const baseURL7 = basePointUrls[3007];
+  // const { APIbackendURl, dispatchAPIbackendUrl } = useContext(APIbackend);
+  // // const { basePointUrls } = APIbackendURl;
+  // const baseURL4 = basePointUrls[3004];
+  // const baseURL6 = basePointUrls[3006];
+  // const baseURL7 = basePointUrls[3007];
   const [userData, setUserData] = useState({});
-  const { uploadedFiles, saveFile, uploadedFileURLs, saveFileURL, removeFile } =
-    useContext(FileUploadContext);
+  // const { uploadedFiles, saveFile, uploadedFileURLs, saveFileURL, removeFile } =
+  //   useContext(FileUploadContext);
   const [city, setCity] = useState(localStorage.getItem("selectedCity") || "");
   const [idProofOptions, setIdProofOptions] = useState([]);
   const [ownershipOptions, setOwnershipOptions] = useState([]);
@@ -53,7 +54,7 @@ const NameChangeRegister = () => {
   const [jointOwners, setJointOwners] = useState([]);
   const [titles, setTitles] = useState([]);
   const [filesData, setFilesData] = useState([]); // Store file data temporarily
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [newName, setNewName] = useState("");
   const [selectedTitle, setSelectedTitle] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
@@ -470,7 +471,7 @@ const NameChangeRegister = () => {
   // };
 
   const ConfirmDetails = () => {
-    navigate("/application/namechangeconfirmdetails");
+    // navigate("/application/namechangeconfirmdetails");
   };
 
   // const legalStatuses = [
@@ -530,8 +531,8 @@ const NameChangeRegister = () => {
         </div>
         <MainContainerData
           userData={userData}
-          uploadedFiles={uploadedFiles}
-          uploadedFileURLs={uploadedFileURLs}
+          // uploadedFiles={uploadedFiles}
+          // uploadedFileURLs={uploadedFileURLs}
           removeUploadedFile={removeUploadedFile}
           handleDrop={handleDrop}
           handleDragOver={handleDragOver}
@@ -552,15 +553,19 @@ const NameChangeRegister = () => {
           idProofOptions={idProofOptions}
           ownershipOptions={ownershipOptions}
           setUserData={setUserData}
+          selectedStatus={selectedStatus}
+          handleSaveNext={handleSaveNext}
+          saveApplication={saveApplication}
         />
 
-        {isModalOpen && (
-          <ConfirmationModal
+        {isModalOpen &&
+          {
+            /* <ConfirmationModal
             message="Do you want to save this application as draft so you can continue later?"
             onConfirm={handleConfirm}
             onCancel={handleCancel}
-          />
-        )}
+          /> */
+          }}
       </Container>
     </ThemeProvider>
   );

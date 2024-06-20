@@ -2,6 +2,9 @@ import React from "react";
 import { Input, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ViewLoad from "./ViewLoad";
+import styled from "styled-components";
+import DocumentList from "./DocumentList";
+import { Dashboard, ExpandLess, ExpandMore } from "@mui/icons-material";
 
 const MainContainerData = ({
   uploadedFiles,
@@ -18,6 +21,7 @@ const MainContainerData = ({
   newName,
   setNewName,
   handleFileUpload,
+  jointOwners,
   removeJointOwner,
   supportingDocsOptions,
   addJointOwner,
@@ -26,6 +30,9 @@ const MainContainerData = ({
   idProofOptions,
   ownershipOptions,
   setUserData,
+  selectedStatus,
+  handleSaveNext,
+  saveApplication,
 }) => {
   return (
     <MainContainer>
@@ -68,19 +75,19 @@ const MainContainerData = ({
                       View Load
                     </ActionButton>
                     <div
-                      class="offcanvas offcanvas-end"
-                      tabindex="-1"
+                      className="offcanvas offcanvas-end"
+                      tabIndex="-1"
                       id="offcanvasProcedure"
                       aria-labelledby="offcanvasProcedureLabel">
-                      <div class="offcanvas-header">
+                      <div className="offcanvas-header">
                         <h5 id="offcanvasProcedureLabel">View Load</h5>
                         <button
                           type="button"
-                          class="btn-close text-reset"
+                          className="btn-close text-reset"
                           data-bs-dismiss="offcanvas"
                           aria-label="Close"></button>
                       </div>
-                      <div class="offcanvas-body">
+                      <div className="offcanvas-body">
                         <ViewLoad />
                       </div>
                     </div>
@@ -92,19 +99,19 @@ const MainContainerData = ({
                       Document list
                     </ActionButton>
                     <div
-                      class="offcanvas offcanvas-end"
-                      tabindex="-1"
+                      className="offcanvas offcanvas-end"
+                      tabIndex="-1"
                       id="offcanvasFAQs"
                       aria-labelledby="offcanvasFAQsLabel">
-                      <div class="offcanvas-header">
+                      <div className="offcanvas-header">
                         <h5 id="offcanvasFAQsLabel">Document list </h5>
                         <button
                           type="button"
-                          class="btn-close text-reset"
+                          className="btn-close text-reset"
                           data-bs-dismiss="offcanvas"
                           aria-label="Close"></button>
                       </div>
-                      <div class="offcanvas-body">
+                      <div className="offcanvas-body">
                         <DocumentList />
                       </div>
                     </div>
@@ -166,7 +173,7 @@ const MainContainerData = ({
                                 </ExistingSignatureLabel>
 
                                 <UploadDocument>
-                                  {uploadedFiles.signature_existing ? (
+                                  {/* {uploadedFiles.signature_existing ? (
                                     <UploadedFileWrapper>
                                       <UploadedFileContent
                                         style={{
@@ -235,7 +242,7 @@ const MainContainerData = ({
                                         }
                                       />
                                     </Dropzone>
-                                  )}
+                                  )} */}
                                   <UploadLimit>Max 300kb</UploadLimit>
                                 </UploadDocument>
                               </ExistingSignatureWrapper>
@@ -322,7 +329,7 @@ const MainContainerData = ({
                                           alt="Upload icon"
                                         />
                                         <>
-                                          {uploadedFiles.photoid ? (
+                                          {/* {uploadedFiles.photoid ? (
                                             <UploadedFileWrapper>
                                               <UploadedFileContent>
                                                 <img
@@ -379,7 +386,7 @@ const MainContainerData = ({
                                                 }
                                               />
                                             </Dropzone>
-                                          )}
+                                          )} */}
                                         </>
                                         <UploadLimit>Max 300kb</UploadLimit>
                                       </UploadPhotoContent>
@@ -441,7 +448,7 @@ const MainContainerData = ({
                                                 }}>
                                                 <span>Upload signature</span>
                                               </label>
-                                              {uploadedFiles[
+                                              {/* {uploadedFiles[
                                                 `signaturejoint_${index}`
                                               ] ? (
                                                 <UploadedFileWrapper>
@@ -489,7 +496,7 @@ const MainContainerData = ({
                                                     }
                                                   />
                                                 </Dropzone>
-                                              )}
+                                              )} */}
                                             </UploadButton>
                                           </SignatureVerification>
 
@@ -539,7 +546,7 @@ const MainContainerData = ({
                                                 Existing supporting document
                                               </UploadTitle>
                                               <UploadDocument>
-                                                {uploadedFiles[
+                                                {/* {uploadedFiles[
                                                   `supporting_${index}`
                                                 ] ? (
                                                   <UploadedFileWrapper>
@@ -611,7 +618,7 @@ const MainContainerData = ({
                                                       }
                                                     />
                                                   </Dropzone>
-                                                )}
+                                                )} */}
                                                 <UploadLimit>
                                                   Max 300kb
                                                 </UploadLimit>
@@ -755,7 +762,7 @@ const MainContainerData = ({
                                       />
                                       <span> Upload signature</span>
                                     </label>
-                                    {uploadedFiles.signature_new ? (
+                                    {/* {uploadedFiles.signature_new ? (
                                       <UploadedFileWrapper>
                                         <UploadedFileContent>
                                           <img
@@ -778,17 +785,6 @@ const MainContainerData = ({
                                           handleDrop(event, "signature_new")
                                         }
                                         onDragOver={handleDragOver}>
-                                        {/* <UploadIcon>
-                                              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d318989f4a0157ea3cd87b32ae36f1dbc5f5f7ce56dcd4ce7e20b841c6cdf4f?apiKey=183f48cf3544413d95323f9ce6e9aa6a&" alt="Upload Icon" />
-                                              <UploadText>
-                                                Drag & Drop or
-                                                <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                  <label htmlFor="signature" style={{ cursor: 'pointer', textDecoration: 'underline', color: '#f99d1c', marginBottom: '7px' }}>
-                                                    Choose File
-                                                  </label>
-                                                </div>
-                                              </UploadText>
-                                            </UploadIcon> */}
                                         <Input
                                           type="file"
                                           id="signature_new"
@@ -801,7 +797,7 @@ const MainContainerData = ({
                                           }
                                         />
                                       </Dropzone>
-                                    )}
+                                    )} */}
                                     {/* <UploadLimit>Max 300kb</UploadLimit> */}
                                   </UploadButton>
                                 </SignatureVerification>
@@ -853,7 +849,7 @@ const MainContainerData = ({
                                 </UploadTitle>
 
                                 <UploadDocument>
-                                  {uploadedFiles.idproof ? (
+                                  {/* {uploadedFiles.idproof ? (
                                     <UploadedFileWrapper>
                                       <UploadedFileContent>
                                         <img
@@ -910,7 +906,7 @@ const MainContainerData = ({
                                         }
                                       />
                                     </Dropzone>
-                                  )}
+                                  )} */}
                                   <UploadLimit>Max 300kb</UploadLimit>
                                 </UploadDocument>
                               </UploadIdProof>
@@ -949,7 +945,7 @@ const MainContainerData = ({
                                 </UploadTitle>
 
                                 <UploadDocument>
-                                  {uploadedFiles.ownership ? (
+                                  {/* {uploadedFiles.ownership ? (
                                     <UploadedFileWrapper>
                                       <UploadedFileContent>
                                         <img
@@ -1006,7 +1002,7 @@ const MainContainerData = ({
                                         }
                                       />
                                     </Dropzone>
-                                  )}
+                                  )} */}
                                   <UploadLimit>Max 300kb</UploadLimit>
                                 </UploadDocument>
                               </UploadOwnershipDocument>
@@ -1044,7 +1040,7 @@ const MainContainerData = ({
                                 </UploadTitle>
 
                                 <UploadDocument>
-                                  {uploadedFiles.supporting ? (
+                                  {/* {uploadedFiles.supporting ? (
                                     <UploadedFileWrapper>
                                       <UploadedFileContent>
                                         <img
@@ -1101,7 +1097,7 @@ const MainContainerData = ({
                                         }
                                       />
                                     </Dropzone>
-                                  )}
+                                  )} */}
                                   <UploadLimit>Max 300kb</UploadLimit>
                                 </UploadDocument>
                               </UploadSupportingDocument>
